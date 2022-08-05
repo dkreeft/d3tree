@@ -1,0 +1,13 @@
+venv/
+__pycache__/
+/__pycache__/*
+.idea/
+*.egg-info/
+data/
+.dockerignore
+.DS_Store
+__pycache__
+.coverage
+build/
+dist/
+htmlcov/
