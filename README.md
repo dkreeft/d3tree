@@ -31,3 +31,8 @@ Visualize current directory:
 ```shell
 d3tree -o output.html **/* *
 ```
+
+## Features not implemented
+
+The following features are not implemented (yet):
+- shell completion
