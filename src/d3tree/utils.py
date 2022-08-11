@@ -1,5 +1,15 @@
+import sys
 from os import scandir
 from typing import Generator, Iterator
+
+from d3tree import node
+
+
+def read_from_stdin():
+    line = sys.stdin.readline().strip()
+    while line:
+        yield line
+        line = sys.stdin.readline()
 
 
 def generator_from_path(path: str, max_depth: int = 1, cur_depth: int = 1) -> Generator:
@@ -16,6 +26,26 @@ def print_iterator(iter_: Iterator) -> None:
     try:
         while True:
             file = next(iter_)
-            print(file.name)
+            try:
+                print(file.name)
+            except AttributeError:
+                print(file)
     except StopIteration:
         pass
+
+
+def create_node(iter_: Iterator) -> node.Node:
+    """Prints the elements of the provided iterator"""
+    root = node.Node(name="/")
+    try:
+        while True:
+            filepath = next(iter_)
+            try:
+                filepath = "".join(filter(None, filepath.name.strip()))
+            except AttributeError:
+                filepath = "".join(filter(None, filepath.strip()))
+            root.insert_node(path=filepath.split("/"))
+    except StopIteration:
+        pass
+
+    return root
