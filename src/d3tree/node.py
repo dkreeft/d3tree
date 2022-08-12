@@ -27,15 +27,3 @@ class Node(list):
     def __repr__(self) -> str:
         reprlib.aRepr.maxlevel = sys.getrecursionlimit()
         return f"""{{"name":"{self.name}","children":[{','.join(map(repr, self.children))}]}}"""
-
-
-if __name__ == "__main__":
-    root = Node(name="/")
-
-    with open(file="../../tests/data/filepath.txt", mode="r") as f:
-        lines = filter(None, (line.strip() for line in f))
-        for line in lines:
-            root.insert_node(path=line.split("/"))
-
-    res = f"treeData = {root};"
-    print(f"root: {root}")

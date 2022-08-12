@@ -20,7 +20,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="d3tree",
-    version="0.1.0",
+    version="0.1.1",
     author="Davey Kreeft",
     description="Visualizes file paths using D3.js",
     long_description=long_description,
