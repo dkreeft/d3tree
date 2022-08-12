@@ -6,7 +6,6 @@ base_requirements = [
 
 dev_requirements = [
     "pytest",
-    "pytest-flake8",
     "pytest-cov",
 ]
 
