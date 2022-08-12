@@ -15,13 +15,14 @@ python -m pip install d3tree
 `d3tree` is a command-line utility that can be used as follows:
 
 ```shell
-d3tree [OPTIONS] [PATH]
+Usage: d3tree [OPTIONS] [PATH]
 
 Options:
--v, --version      Prints version
--h, --help         Prints this help text
--o, --output       Specifies a path and filename to write HTML output
--t, --template     Specifies the template to use. Available options are "circles", "flame", "tree", "treemap"
+  -v, --version                   Print version
+  -o, --output TEXT               Specify filepath to write HTML output
+  -t, --template [tree|circles|flame|treemap]
+                                  Specify template
+  --help                          Show this message and exit.
 ```
 
 ### Examples
@@ -36,3 +37,7 @@ d3tree -o output.html **/* *
 
 The following features are not implemented (yet):
 - shell completion
+- screenshot feature
+- using local dependencies
+
+Feel free to create a PR for these or other features.
