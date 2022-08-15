@@ -20,7 +20,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="d3tree",
-    version="0.2.0",
+    version="0.2.1",
     author="Davey Kreeft",
     description="Visualizes file paths using D3.js",
     long_description=long_description,
@@ -41,4 +41,6 @@ setup(
         "build": [dev_requirements, build_requirements],
     },
     entry_points={"console_scripts": ["d3tree = d3tree.cli:main"]},
+    include_package_data=True,
+    package_data={"": ["templates/*.html"]},
 )
