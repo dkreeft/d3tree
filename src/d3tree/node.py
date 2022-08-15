@@ -13,15 +13,17 @@ class Node(list):
         if not path:
             return
 
-        parent: str = path[0]
-        child: List[str] = path[1:]
+        child_name: str = path[0]
+        grandchildren: List[str] = path[1:]
 
-        parent_node = [x for x in self.children if x.name == parent]
-        if not parent_node:
-            parent_node = Node(name=parent)
-            self.children.append(parent_node)
+        for child in self.children:
+            if child.name == child_name:
+                break
+        else:
+            child = Node(name=child_name)
+            self.children.append(child)
 
-        parent_node.insert_node(path=child)  # type: ignore
+        child.insert_node(path=grandchildren)
 
     @reprlib.recursive_repr()
     def __repr__(self) -> str:
