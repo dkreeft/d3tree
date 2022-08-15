@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fixed algorithm for generating trees.
 
+### Removed
+
+- Outdated unit tests.
+
 ## [0.1.1] - 2022-08-12
 
 ### Removed
