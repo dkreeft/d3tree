@@ -30,7 +30,13 @@ Options:
 Visualize current directory:
 
 ```shell
-d3tree -o output.html **/* *
+ls | d3tree -o output.html
+```
+
+Or use a file that contains the filepaths:
+
+```shell
+cat filepaths.txt | d3tree -o output.html
 ```
 
 ## Features not implemented
@@ -38,6 +44,6 @@ d3tree -o output.html **/* *
 The following features are not implemented (yet):
 - shell completion
 - screenshot feature
-- using local dependencies
+- using local JS dependencies
 
 Feel free to create a PR for these or other features.
